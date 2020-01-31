@@ -1,7 +1,7 @@
 FROM bestwu/deepin:panda
 
 RUN apt-get update -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
         wajig software-properties-common apt-transport-https \
         tzdata locales lsb-release \
