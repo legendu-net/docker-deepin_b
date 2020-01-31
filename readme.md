@@ -1,4 +1,5 @@
-# [dclong/deepin_b](https://hub.docker.com/r/dclong/deepin_b/)
+# dclong/deepin_b [@DockerHub](https://hub.docker.com/r/dclong/deepin_b/) | [@GitHub](https://github.com/dclong/docker-deepin_b)
+
 
 Linux Deepin with basic utils in Docker.
 
