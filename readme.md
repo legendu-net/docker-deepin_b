@@ -21,14 +21,12 @@ to `/workdir` and `/home_host` in the container respectively.
 docker run -d \
     --name jupyterhub-ds \
     --log-opt max-size=50m \
-    -p 8000:8000 \
-    -p 5006:5006 \
     -e DOCKER_USER=$(id -un) \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/deepin_b
 ```
 The following command (only works on Linux) does the same as the above one 
@@ -39,14 +37,12 @@ docker run -d \
     --log-opt max-size=50m \
     --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
     --cpus=$(($(nproc) - 1)) \
-    -p 8000:8000 \
-    -p 5006:5006 \
     -e DOCKER_USER=$(id -un) \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/deepin_b
 ```
 
